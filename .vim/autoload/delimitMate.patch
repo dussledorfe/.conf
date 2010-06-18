@@ -1,0 +1,46 @@
+--- delimitMate.vim	2010-06-06 13:37:48.804008356 +0000
++++ .vim/autoload/delimitMate.vim	2010-06-06 13:36:23.363007519 +0000
+@@ -357,6 +357,14 @@
+ 	endif
+ 	let line = getline('.')
+ 	let col = col('.')-2
++
++	if ((a:char == ")" && line[(col-1)] == "(" && line[(col+1)] == ")") || (a:char == "]" && line[(col-1)] == "[" && line[(col+1)] == "]") || (a:char == "}" && line[(col-1)] == "{" && line[(col+1)] == "}"))
++		call setline('.', line[:(col-1)].line[(col+2):])
++		call delimitMate#RmBuffer(1)
++		echom line[:(col-1)].line[(col+2):]
++		return ''
++	endif
++
+ 	if (col) < 0
+ 		call setline('.',a:char.line)
+ 		call insert(b:delimitMate_buffer, a:char)
+@@ -479,7 +487,7 @@
+ 		" Expand:
+ 		call delimitMate#FlushBuffer()
+ 		"return "\<Esc>a\<CR>x\<CR>\<Esc>k$\"_xa"
+-		return "\<CR>\<UP>\<Esc>o"
++		return "\<CR>\<UP>\<Esc>o\<Tab>"
+ 	else
+ 		return "\<CR>"
+ 	endif
+@@ -492,6 +500,8 @@
+ 	if delimitMate#WithinEmptyPair()
+ 		" Expand:
+ 		call insert(b:delimitMate_buffer, 's')
++		" Expand:
++		call insert(b:delimitMate_buffer, 's')
+ 		return delimitMate#WriteAfter(' ') . "\<Space>"
+ 	else
+ 		return "\<Space>"
+@@ -648,9 +658,7 @@
+ 	"the following simply creates an ambiguous mapping so vim fully
+ 	"processes the escape sequence for terminal keys, see 'ttimeout' for a
+ 	"rough explanation, this just forces it to work
+-	if &term[:4] == "xterm"
+-		inoremap <silent> <C-[>OC <RIGHT>
+-	endif
++	inoremap <silent> <C-[>OC <RIGHT>
+ endfunction "}}}
+ 
+ function! delimitMate#UnMap() " {{{

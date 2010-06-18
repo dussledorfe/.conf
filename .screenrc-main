@@ -1,0 +1,14 @@
+# Source original
+source .screenrc
+
+# Define new windows
+screen -t irc  1  irssi
+screen -t reddit  2  cortex
+screen -t mpd  3  "mpd && ncmpcpp"
+screen -t ssh   4  ssh wideopenbsd.org
+screen -t emacs   5  emacs -nw
+
+# Start at screen no1
+bind c screen 1
+bind ^c screen 1
+bind 0 select 10

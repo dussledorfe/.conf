@@ -1,0 +1,82 @@
+§%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+== comment.end-of-line-comment == append ==
+# <CURSOR>
+§%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+== comment.frame ==
+#--------------------------------------------------------------------------
+#  <CURSOR>
+#--------------------------------------------------------------------------
+§%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+== comment.function ==
+# function:  |?FUNCTION_NAME|
+# synopsis:  <CURSOR>
+# parameters:  ????
+# return values:  ????
+§%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+== comment.method ==
+# class:  |?CLASSNAME|
+# methods:  |?METHODNAME|
+# parameters:  ????
+# return values:  ????
+# synopsis:  <CURSOR>
+§%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+== comment.file-description-pl == start ==
+#!/usr/bin/perl 
+
+# file: |FILENAME|
+# usage: ./|FILENAME|  
+# synopsis: <CURSOR>
+# author: |AUTHOR| (|EMAIL|)
+# created: |DATE| |TIME|
+
+use 5.010; use strict; use warnings;
+
+§%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+== comment.file-description-pm == start ==
+
+# file: |FILENAME|
+# usage: ./|FILENAME|  
+# synopsis: <CURSOR>
+# author: |AUTHOR| (|EMAIL|)
+# created: |DATE| |TIME|
+
+use 5.010; use strict; use warnings;
+
+
+§%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+== comment.file-description-t == start ==
+
+# file: |FILENAME|
+# usage: ./|FILENAME|  
+# synopsis: <CURSOR>
+# author: |AUTHOR| (|EMAIL|)
+# created: |DATE| |TIME|
+
+use 5.010; use strict; use warnings;
+
+use Test::More tests => 1;                      # last test to print
+
+
+§%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+== comment.file-description-pod == start ==
+#
+# file: |FILENAME|
+# usage: ./|FILENAME|  
+# synopsis: <CURSOR>
+# author: |AUTHOR| (|EMAIL|)
+# created: |DATE| |TIME|
+
+§%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+== comment.keyword-bug == append ==
+ # :BUG:|DATE| |TIME|:|AUTHORREF|: <CURSOR>
+== comment.keyword-todo == append ==
+ # :TODO:|DATE| |TIME|:|AUTHORREF|: <CURSOR>
+== comment.keyword-tricky == append ==
+ # :TRICKY:|DATE| |TIME|:|AUTHORREF|: <CURSOR>
+== comment.keyword-warning == append ==
+ # :WARNING:|DATE| |TIME|:|AUTHORREF|: <CURSOR>
+== comment.keyword-workaround == append ==
+ # :WORKAROUND:|DATE| |TIME|:|AUTHORREF|: <CURSOR>
+== comment.keyword-keyword == append ==
+ # :|?KEYWORD:u|:|DATE| |TIME|:|AUTHORREF|: <CURSOR>
+§%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
